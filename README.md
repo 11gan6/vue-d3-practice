@@ -1,8 +1,15 @@
 # 安装步骤
-npm install
-npm run serve
+- npm install
+- npm run serve
 
 # 需要实现的组件
-force-directed graph
-stream graph
-sankey-digram
+## force-directed graph
+
+
+## stream graph
+河流图（Streamgraph），有时候也叫做“主题河流图”（ThemeRiver），是堆积面积图的一种变形，通过“流动”的形状来展示不同类别的数据随时间的变化情况。但不同于堆积面积图，河流图并不是将数据描绘在一个固定的、笔直的轴上（堆积图的基准线就是x轴），而是将数据分散到一个变化的中心基准线上（该基准线不一定是笔直的）。
+
+
+## sankey-digram
+桑基图（Sankey diagram），即桑基能量分流图，也叫桑基能量平衡图。它是一种特定类型的流程图，图中延伸的分支的宽度对应数据流量的大小，通常应用于能源、材料成分、金融等数据的可视化分析。
+桑基图最明显的特征就是，始末端的分支宽度总和相等，即所有主支宽度的总和应与所有分出去的分支宽度的总和相等，保持能量的平衡。

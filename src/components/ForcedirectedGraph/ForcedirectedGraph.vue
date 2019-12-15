@@ -367,6 +367,16 @@ export default {
             .force("charge_force", d3.forceManyBody())
             .force("center_force", d3.forceCenter(width / 2, height / 2))
 
+        let linkForce = d3.forceLink(linksData).id((d) => { return d.id })
+        simulation.force("links", linkForce)
+
+        var link = svg.append("g")
+            .attr("class", "links")
+            .selectAll("line")
+            .data(linksData)
+            .enter()
+            .append("line")
+            .attr("stroke-width", function(d) { return Math.sqrt(d.value); })
         
 
         let node = svg.append('g')
@@ -380,17 +390,7 @@ export default {
             .call(this.drag(simulation))
 
         
-        let linkForce = d3.forceLink(linksData).id((d) => { return d.id })
-        simulation.force("links", linkForce)
-
-        var link = svg.append("g")
-            .attr("class", "links")
-            .selectAll("line")
-            .data(linksData)
-            .enter()
-            .append("line")
-            .attr("stroke-width", function(d) { return Math.sqrt(d.value); })
-
+        
         
         simulation.on("tick", () => {
             link
